@@ -1,6 +1,9 @@
 package com.personal.erg.tracking;
 
+import com.personal.erg.models.Material;
+
 import java.time.ZonedDateTime;
+import java.util.List;
 
 public class Incident {
 
@@ -9,14 +12,17 @@ public class Incident {
     private String locationLatitude;
     private String locationLongitude;
 
+    private List<Material> hazardousMaterials;
+
     public Incident() {
     }
 
-    public Incident(ZonedDateTime incidentDateAndTime, String incidentType, String locationLatitude, String locationLongitude) {
+    public Incident(ZonedDateTime incidentDateAndTime, String incidentType, String locationLatitude, String locationLongitude, List<Material> hazardousMaterials) {
         this.incidentDateAndTime = incidentDateAndTime;
         this.incidentType = incidentType;
         this.locationLatitude = locationLatitude;
         this.locationLongitude = locationLongitude;
+        this.hazardousMaterials = hazardousMaterials;
     }
 
     public ZonedDateTime getIncidentDateAndTime() {
@@ -49,5 +55,13 @@ public class Incident {
 
     public void setLocationLongitude(String locationLongitude) {
         this.locationLongitude = locationLongitude;
+    }
+
+    public List<Material> getHazardousMaterials() {
+        return hazardousMaterials;
+    }
+
+    public void setHazardousMaterials(List<Material> hazardousMaterials) {
+        this.hazardousMaterials = hazardousMaterials;
     }
 }
