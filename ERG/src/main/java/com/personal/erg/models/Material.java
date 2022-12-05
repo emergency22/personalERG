@@ -8,17 +8,19 @@ public class Material {
     private boolean toxicInhalationHazard;
     private boolean waterReactive;
     private boolean chemicalWarfare;
+    private HazmatClass materialClass;
 
     public Material() {
     }
 
-    public Material(String materialName, int unId, int guideNumber, boolean toxicInhalationHazard, boolean waterReactive, boolean chemicalWarfare ) {
+    public Material(String materialName, int unId, int guideNumber, boolean toxicInhalationHazard, boolean waterReactive, boolean chemicalWarfare, HazmatClass materialClass) {
         this.materialName = materialName;
         this.unId = unId;
         this.guideNumber = guideNumber;
         this.toxicInhalationHazard = toxicInhalationHazard;
         this.waterReactive = waterReactive;
         this.chemicalWarfare = chemicalWarfare;
+        this.materialClass = materialClass;
     }
 
     public String getMaterialName() {
@@ -67,5 +69,13 @@ public class Material {
 
     public void setChemicalWarfare(boolean chemicalWarfare) {
         this.chemicalWarfare = chemicalWarfare;
+    }
+
+    public HazmatClass getMaterialClass() {
+        return materialClass;
+    }
+
+    public void setMaterialClass(HazmatClass materialClass) {
+        this.materialClass = materialClass;
     }
 }
